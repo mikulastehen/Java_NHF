@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args)
     {
-        Driver asd = new Driver("Joska");
-        Driver rzz = new Driver("Pista");
+        ArrayList<Vehicle> jarmuvek = new ArrayList<>();
+        ArrayList<Driver> vezetok = new ArrayList<>();
 
-        rzz.SetNewLicense('B');
-        rzz.RemoveLicenses('B');
-        Vehicle fdg = new Bus(1500, 3, "Mercedes", "G2", "FLR-254", "Diesel", true);
-        rzz.SetVehicle(fdg);
-        fdg.SendOnDrive();
-        System.out.println(rzz);
-        System.out.println("Hello world!");
+        jarmuvek.add(new Bus(1500, 3, "Mercedes", "G2", "FLR-254", "Diesel", true));
+        vezetok.add(new Driver("Joska"));
+        vezetok.add(new Driver("Pista"));
+
+        vezetok.get(0).SetNewLicense('B');
+        vezetok.get(0).SetVehicle(jarmuvek.get(0));
+        jarmuvek.get(0).SendOnDrive();
     }
 }
