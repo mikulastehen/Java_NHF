@@ -1,4 +1,8 @@
-public class Driver
+import java.io.Serializable;
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+public class Driver implements Serializable
 {
     private String name;
     private String licenses;
@@ -13,6 +17,7 @@ public class Driver
     public String getLicenses() {
         return licenses;
     }
+    public Vehicle getCurrentvehicle(){return currentvehicle;}
 
     public Driver(String n)
     {
@@ -27,11 +32,21 @@ public class Driver
             if(b)
             {
                 currentvehicle = v;
+
                 System.out.println("INFO! Jármű sikeresen vezetőhöz rendelve!");
             }
 
         }
         else System.out.println("HIBA! Az összerendelés sikertelen!");
+    }
+
+    public void DockVehicle()
+    {
+        if(currentvehicle != null)
+        {
+            currentvehicle.SuperSet(null);
+            currentvehicle = null;
+        }
     }
 
     public void SetNewLicense(char l)
@@ -64,4 +79,7 @@ public class Driver
     public String toString() {
         return String.format("Név: %s, Azonosító: %s, Kategóriák: %s, Aktív jármű: %s", name, driverno, licenses, currentvehicle);
     }
+
+
+
 }

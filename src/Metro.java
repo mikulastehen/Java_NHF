@@ -5,10 +5,10 @@ public class Metro extends Vehicle
     private int wagno;
 
     public String getType() {return "M";}
-    public Metro(int m, int d, String ma, String mo, String l, String avr, boolean avon, int wgn)
+    public Metro(String ma, String mo, String avr, int wgn, int m, int d, String l)
     {
         super(m, d, ma, mo, l);
-        this.avr = avr; avron = avon; wagno = wgn;
+        this.avr = avr; avron = false; wagno = wgn;
     }
 
     @Override

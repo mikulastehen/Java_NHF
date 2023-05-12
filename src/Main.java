@@ -1,17 +1,33 @@
-import java.util.ArrayList;
+import java.io.File;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args)
     {
-        ArrayList<Vehicle> jarmuvek = new ArrayList<>();
-        ArrayList<Driver> vezetok = new ArrayList<>();
+        ArrayList[] load = FileManager.Load();
+        ArrayList<Driver> vezetok = load[0];
+        ArrayList<Vehicle> jarmuvek = load[1];
 
-        jarmuvek.add(new Bus(1500, 3, "Mercedes", "G2", "FLR-254", "Diesel", true));
-        vezetok.add(new Driver("Joska"));
-        vezetok.add(new Driver("Pista"));
+        ArrayList<CommandBase> commands = new ArrayList<>();
+        commands.add(new AddVehicle(vezetok, jarmuvek));
+        commands.add(new AddDriver(vezetok, jarmuvek));
+        commands.add(new SetLicense(vezetok, jarmuvek));
 
-        vezetok.get(0).SetNewLicense('B');
-        vezetok.get(0).SetVehicle(jarmuvek.get(0));
-        jarmuvek.get(0).SendOnDrive();
+        while (true)
+        {
+            Scanner sc = new Scanner(System.in);
+            String be = sc.nextLine();
+            for(CommandBase x : commands)
+            {
+                if(x.toString().equals(be.split(" ")[0]))
+                {
+                    x.Command(be);
+                }
+            }
+        }
+        //FileManager.Save(vezetok, jarmuvek);*/
+
+        //System.out.println();
     }
 }

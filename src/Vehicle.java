@@ -1,4 +1,6 @@
-public abstract class Vehicle
+import java.io.Serializable;
+
+public abstract class Vehicle implements Serializable
 {
     //Adattagok
     private int mass;
@@ -13,9 +15,7 @@ public abstract class Vehicle
 
 
     //Get Metódusok
-    public int getMass() {
-        return mass;
-    }
+    public int getMass() {return mass;}
 
     public int getDoorcount() {
         return doorcount;
@@ -41,7 +41,8 @@ public abstract class Vehicle
 
     public Vehicle(int m, int d, String ma, String mo, String l)
     {
-        mass = m; doorcount = d; make = ma; model = mo; license = l;
+        mass = m;
+        doorcount = d; make = ma; model = mo; license = l;
         checkreq = 20; lastcheck = 0;
     }
     public void SendOnDrive()
@@ -65,6 +66,19 @@ public abstract class Vehicle
             lastcheck++;
         }
         else System.out.println("HIBA! A jármű nincs forgalomban!");
+    }
+
+    public void doCheckup()
+    {
+        if(!onroute && activedriver != null)
+        {
+            lastcheck = 0;
+            System.out.println("INFO! A jármű műszaki ellenőrzése megtörtént");
+        }
+        else
+        {
+            System.out.println("HIBA! A jármű műszaki ellenőrzése nem teljesíthető!");
+        }
     }
 
 }

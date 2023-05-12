@@ -1,11 +1,11 @@
 public class Tram extends Vehicle
 {
-    private boolean pantograph;
+    private String pantograph;
     private boolean hasac;
     private String ctlogic;
 
     public String getType() {return "T";}
-    public Tram(int m, int d, String ma, String mo, String l, boolean pt, boolean ac, String ct)
+    public Tram(String ma, String mo, String pt, String ct, boolean ac, int m, int d, String l)
     {
         super(m, d, ma, mo, l);
         pantograph = pt; hasac = ac; ctlogic = ct;

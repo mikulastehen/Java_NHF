@@ -1,4 +1,6 @@
-public class Bus extends Vehicle
+import java.io.Serializable;
+
+public class Bus extends Vehicle implements Serializable
 {
     private String fuel;
     private boolean access;
@@ -11,7 +13,7 @@ public class Bus extends Vehicle
     }
 
 
-    public Bus(int m, int d, String ma, String mo, String l, String f, boolean a)
+    public Bus(String ma, String mo, String f, boolean a, int m, int d, String l)
     {
         super(m, d, ma, mo, l);
         fuel = f; access = a;
