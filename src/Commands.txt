@@ -1,0 +1,12 @@
+New driver: nd <Last name> <First name>; Adds a new driver to the database;
+Set license for driver: <Driver name> <category (b, m, t)>; sets a new license category for a given driver;
+Remove license: <Driver name> <category to remove (b, m, t)>; removes the license from a driver based on the input values;
+New vehicle - Bus: nv bus <Make> <Model> <fuel type> <acessible> <mass> <door count> <license>; Adds a new bus to the database;
+New vehicle - Tram: nv tram <Make> <Model> <Pantograph> <Control type> <has AC?> <mass> <door count> <license>; Adds a new tram to the database;
+New vehicle - Metro: nv metro <Make> <Model> <AVR type> <wagon number> <mass> <door count> <license>; Adds a new metro to the database;
+Set vehicle: sv <driver name> <license>; Orders a vehicle to a given driver;
+Dock: dock <Driver name>; docks the vehicle (removes from the driver)
+Send On Route: sr <License>; Sends the given vehicle on route; (Only if it it has an active driver, and the driver has the vehicle's corresponding category license);
+Call Back: cb <license>; calls the given vehicle back from route;
+Do checkup: check <license>; does the checkup on a vehicle;
+List vehicle data: lsv; lists all vehicles data in the database;
