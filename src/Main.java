@@ -1,5 +1,3 @@
-import java.io.File;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
@@ -10,9 +8,16 @@ public class Main {
         ArrayList<Vehicle> jarmuvek = load[1];
 
         ArrayList<CommandBase> commands = new ArrayList<>();
-        commands.add(new AddVehicle(vezetok, jarmuvek));
+        commands.add(new NewVehicle(vezetok, jarmuvek));
         commands.add(new AddDriver(vezetok, jarmuvek));
         commands.add(new SetLicense(vezetok, jarmuvek));
+        commands.add(new RemoveLicense(vezetok, jarmuvek));
+        commands.add(new SetVehicle(vezetok, jarmuvek));
+        commands.add(new Dock(vezetok, jarmuvek));
+        commands.add(new SendOnRoute(vezetok, jarmuvek));
+        commands.add(new CallBack(vezetok, jarmuvek));
+        commands.add(new Checkup(vezetok, jarmuvek));
+        commands.add(new ListVehicleData(vezetok, jarmuvek));
 
         while (true)
         {
@@ -23,6 +28,7 @@ public class Main {
                 if(x.toString().equals(be.split(" ")[0]))
                 {
                     x.Command(be);
+                    FileManager.Save(vezetok, jarmuvek);
                 }
             }
         }
