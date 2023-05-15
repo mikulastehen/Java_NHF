@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
-public class AddVehicle extends CommandBase
+public class NewVehicle extends CommandBase
 {
 
-    public AddVehicle(ArrayList<Driver> d, ArrayList<Vehicle> v) {
+    public NewVehicle(ArrayList<Driver> d, ArrayList<Vehicle> v) {
         super(d, v);
     }
 
@@ -13,7 +13,9 @@ public class AddVehicle extends CommandBase
         String[] tomb = args.split(" ");
         if(tomb.length == 1)
         {
-            System.out.println("A helyes formátum: nv <Type> <Make> <Model> <fuel type> <accessible> <mass> <door count> <license>");
+            System.out.println("New vehicle - Bus: nv bus <Make> <Model> <fuel type> <acessible> <mass> <door count> <license>\n" +
+                    "New vehicle - Tram: nv tram <Make> <Model> <Pantograph> <Control type> <has AC?> <mass> <door count> <license>\n" +
+                    "New vehicle - Metro: nv metro <Make> <Model> <AVR type> <wagon number> <mass> <door count> <license>");
             return;
         }
         if(tomb[1].equals("bus"))
