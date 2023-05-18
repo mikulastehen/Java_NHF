@@ -56,6 +56,7 @@ public class VehicleTest
     @Test
     public void CallBackTest()
     {
+        v2.setActiveDriver(d2);
         v2.SendOnDrive();
         assertTrue(v2.getOnroute());
         v2.CallBack();
