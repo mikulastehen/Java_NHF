@@ -1,12 +1,36 @@
 import java.util.ArrayList;
 
+
+/**
+ * <h1>NewVehicle parancsosztály</h1>
+ * Az osztály feladata az új járművek hozzáadására kiadott parancsok kezelése.
+ * Az osztály a {@link CommandBase} osztályból öröklődik.
+ * @see Vehicle
+ * @see Bus
+ * @see Tram
+ * @see Metro
+ */
 public class NewVehicle extends CommandBase
 {
 
+    /**
+     * <h2>Konstruktor</h2>
+     * Szabványos módon átveszi az adatbázist
+     * @param d Driver lista
+     * @param v Vehicle lista
+     */
     public NewVehicle(ArrayList<Driver> d, ArrayList<Vehicle> v) {
         super(d, v);
     }
 
+    /**
+     * <h2>Command metódus</h2>
+     * Az átvett parancs alapján elvégzi a jármű hozzáadását az adatbázisba.
+     * A logika ellenőrzi hogy azonos pályaszámú/rendszámú jármű szerepel e már a listában, mivel a duplikátum nem megengedett.
+     * Ha a parancsban szintaxis hiba van, súgót ír ki.
+     * A parancs 2. paramétere alapján választja ki a megfelelő jármű konstruktorát, és adja át a paramétereket.
+     * @param args parancs szöveges formában
+     */
     @Override
     public void Command(String args)
     {
@@ -55,6 +79,11 @@ public class NewVehicle extends CommandBase
         }
     }
 
+    /**
+     * <h2>toString metódus</h2>
+     * A parancs azonosítására használt metódus
+     * @return a parancs betűjele
+     */
     @Override
     public String toString() {
         return "nv";
