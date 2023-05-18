@@ -74,8 +74,9 @@ public class NewVehicle extends CommandBase
                     System.out.println("HIBA! A megadott pályaszám már létezik a nyilvántartásban!");
                     return;
                 }
-                super.vehicles.add(new Metro(tomb[2], tomb[3], tomb[4], Integer.parseInt(tomb[5]), Integer.parseInt(tomb[6]), Integer.parseInt(tomb[7]), tomb[8]));
             }
+            super.vehicles.add(new Metro(tomb[2], tomb[3], tomb[4], Integer.parseInt(tomb[5]), Integer.parseInt(tomb[6]), Integer.parseInt(tomb[7]), tomb[8]));
+            System.out.println("INFO! A jármű felvéve a nyilvántartásba");
         }
     }
 

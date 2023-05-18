@@ -9,15 +9,15 @@ public class Metro extends Vehicle
     /**
      * funkciós haszna nincs
      */
-    private String avr;
+    private final String avr;
     /**
      * funkciós haszna nincs
      */
-    private boolean avron;
+    private final boolean avron;
     /**
      * funkciós haszna nincs
      */
-    private int wagno;
+    private final int wagno;
 
     /**
      * <h2>getType</h2>
@@ -60,4 +60,5 @@ public class Metro extends Vehicle
         System.out.println("HIBA! A járművezetőnek nincs jogosultsága a megadott járműkategóriára!");
         return false;
     }
+
 }

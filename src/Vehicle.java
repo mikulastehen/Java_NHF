@@ -10,23 +10,23 @@ public abstract class Vehicle implements Serializable
     /**
      * üzemi tömeg
      */
-    private int mass;
+    private final int mass;
     /**
      * ajtók száma
      */
-    private int doorcount;
+    private final int doorcount;
     /**
      * Kötelező ellenőrzés elvégzéséig megtehető szolgálatok. Ez most hard coded a redszerben (5 szolgálat)
      */
-    private int checkreq;
+    private final int checkreq;
     /**
      * Gyártó
      */
-    private String make;
+    private final String make;
     /**
      * Model
      */
-    private String model;
+    private final String model;
     /**
      * A járműhöz rendelt Driver objektum referenciája
      */
@@ -38,7 +38,7 @@ public abstract class Vehicle implements Serializable
     /**
      * A jármű pályaszáma/rendszáma
      */
-    private String license;
+    private final String license;
     /**
      * bool érték, azt tárolja hogy a jármű épp forgalomban van-e
      */
@@ -148,6 +148,7 @@ public abstract class Vehicle implements Serializable
     {
         if(onroute)
         {
+            System.out.println("INFO! A jármű sikeresen visszahívva a szolgálatból!");
             onroute = false;
             lastcheck++;
         }

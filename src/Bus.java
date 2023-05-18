@@ -14,12 +14,12 @@ public class Bus extends Vehicle implements Serializable
     /**
      * A fuel field egy String, funkcionális feladata nincs.
      */
-    private String fuel;
+    private final String fuel;
 
     /**
      * Az access field egy boolean, funkcionális feladata nincs.
      */
-    private boolean access;
+    private final boolean access;
 
     /**
      * <h2>Konstruktor</h2>

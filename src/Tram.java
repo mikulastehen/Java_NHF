@@ -8,15 +8,15 @@ public class Tram extends Vehicle
     /**
      * funkciós haszna nincs
      */
-    private String pantograph;
+    private final String pantograph;
     /**
      * funkciós haszna nincs
      */
-    private boolean hasac;
+    private final boolean hasac;
     /**
      * funkciós haszna nincs
      */
-    private String ctlogic;
+    private final String ctlogic;
 
     /**
      * <h2>getType</h2>

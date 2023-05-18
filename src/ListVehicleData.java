@@ -27,10 +27,10 @@ public class ListVehicleData extends CommandBase
     @Override
     public void Command(String args) {
         String[] tomb = args.split(" ");
-        System.out.println("Gyártó: Model: Rendszám/Pályaszám: Üzemi tömeg: Ajtók száma: Utolsó ellenőrzés: Szolgálatban:");
+        System.out.println("Gyártó: Model: Rendszám/Pályaszám: Jelenlegi vezető: Szolgálatban:");
         for (Vehicle x : vehicles)
         {
-            System.out.printf(x.toString());
+            System.out.println(x.toString() + " " + x.getActivedriver() + " " + x.getOnroute());
         }
     }
 

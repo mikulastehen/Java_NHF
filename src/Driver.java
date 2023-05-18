@@ -15,19 +15,20 @@ public class Driver implements Serializable
      * a vezető nevét tárolja.
      * A field egy string, ám a program logikájában (bevitel esetén) mindig 2 részben kezeli <Vezetéknév> <Keresztnév>
      */
-    private String name;
+    private final String name;
     /**
      * egy stringben tárolja a vezető jogosítványait, a program nagy betűs kategóriákat tart számon (B - busz, T - villamos, M - metró)
      */
     private String licenses;
     /**
      * @deprecated A szerializálás miatt ütközések következhetnek be, feladata így nincs, és nem is figyelembe vehető!!
+     * @deprecated A driverno és statikus párja logikája is jelen van, ám ezek nem használatosak
      */
     private static int drivernocount = 1;
     /**
      * @deprecated Eredeti feladata a statikus érték átvétele lett volna
      */
-    private int driverno;
+    private final int driverno;
     /**
      * Amennyiben a vezetőhöz egy jármű van rendelve, a Driver oldaláról ez a referencia tárolja az adott járművet.
      */
@@ -62,7 +63,6 @@ public class Driver implements Serializable
     /**
      * <h2>Konstruktor</h2>
      * A megadott paraméterek alapján egy új Driver objektumot hoz létre.
-     * @deprecated A driverno és statikus párja logikája is jelen van, ám ezek nem használatosak
      * @param n név (Vezetéknév Keresztnév)
      */
     public Driver(String n)
@@ -102,7 +102,7 @@ public class Driver implements Serializable
      */
     public void DockVehicle()
     {
-        if(currentvehicle != null)
+        if(currentvehicle != null && !currentvehicle.getOnroute())
         {
             currentvehicle.SuperSet(null);
             currentvehicle = null;
